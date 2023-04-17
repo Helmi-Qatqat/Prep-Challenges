@@ -59,7 +59,7 @@
         {
             "language": "javascript",
             "source": [
-                "function migratoryBirds(arr) {\n  let newArr = [];\n  let arrString = arr.join(\"\")\n  // let sortedArr = Array.from(arr).sort((a,b) => a - b)\n  let filteredArr = Array.from(new Set(arr));\n  for(let i of filteredArr) {\n    let ReString = new RegExp(i,\"ig\")\n    newArr.push(arrString.match(ReString))\n  }\n  let maxArrayLength = Math.max(...newArr.map(a => a.length));\n  return (newArr.filter(arr => arr.length === maxArrayLength).sort())[0][0]\n}"
+                "function migratoryBirds(arr) {\n  let newArr = [];\n  let arrString = arr.join(\"\")\n  let filteredArr = Array.from(new Set(arr));\n  for(let i of filteredArr) {\n    let ReString = new RegExp(i,\"ig\")\n    newArr.push(arrString.match(ReString))\n  }\n  let maxArrayLength = Math.max(...newArr.map(a => a.length));\n  return (newArr.filter(arr => arr.length === maxArrayLength).sort())[0][0]\n}"
             ],
             "outputs": []
         }
