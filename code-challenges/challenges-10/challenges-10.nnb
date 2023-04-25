@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Birthday Cake Candles](https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function birthdayCakeCandles(candles) {\n  return candles.filter((e)=> e == Math.max(...candles)).length\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Compare The Triplets](https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function compareTriplets(a, b) {\n  let aScore = 0;\n  let bScore = 0;\n  for(let i = 0; i < a.length; i++) {\n    if(a[i] > b[i]) {\n      aScore++;\n    } else if (a[i] < b[i]) {\n      bScore++\n    } else {\n      continue\n    }\n  }\n  return [aScore, bScore]\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Migratory Birds](https://www.hackerrank.com/challenges/migratory-birds/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function migratoryBirds(arr) {\n  let newArr = [];\n  let arrString = arr.join(\"\")\n  let filteredArr = Array.from(new Set(arr));\n  for(let i of filteredArr) {\n    let ReString = new RegExp(i,\"ig\")\n    newArr.push(arrString.match(ReString))\n  }\n  let maxArrayLength = Math.max(...newArr.map(a => a.length));\n  return (newArr.filter(arr => arr.length === maxArrayLength).sort())[0][0]\n}"
+            ],
+            "outputs": []
+        }
+    ]
+}
