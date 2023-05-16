@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Append And Delete](https://www.hackerrank.com/challenges/append-and-delete/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function appendAndDelete(s, t, k) {\n  // Write your code here\n  if ((s.includes(t) || t.includes(s)) && (k % Math.abs(s.length - t.length) == 0) && Math.abs(s.length - t.length) !== 1){\n    return `Yes`\n  } else if (t.length > s.length && k <= t.length) {\n    return `No`\n  } else if (t === s){\n    return `Yes`\n  } else if (s.length == t.length && k < s.length + t.length){\n    return `No`\n  } else if (s.length - t.length > k || t.length - s.length > k ) {\n    return `No`\n  } else if (s.length + t.length <= k) {\n    return `Yes`\n  } else if (s.length >= k || t.length >= k) {\n    return `Yes`\n  } else return `No` \n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Encryption](https://www.hackerrank.com/challenges/encryption/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function encryption(s) {\n  let newString = s.includes(\" \") ? s.split(\" \").filter((e)=> e != \" \").join(\"\").split(\"\") : s.split(\"\")\n  let rows = Math.floor(Math.sqrt(newString.length))\n  let columns = Math.ceil(Math.sqrt(newString.length))\n  if(rows * columns < newString.length) {\n    rows = columns;\n  }\n  let encArr = []\n  for(let i = 0; i < columns; i++) {\n    let counter = 0;\n    let subArray = [];\n    for(let j = 0; j < rows; j++) {\n      if(newString[counter] !== null || newString[counter] !== undefined) {\n        subArray.push(newString[i + counter])\n      }\n      counter += columns;\n    }\n    encArr.push(subArray.join(\"\"))\n  }\n  return encArr.join(\" \")\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [The Time In Words](https://www.hackerrank.com/challenges/the-time-in-words/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function timeInWords(h, m) {\n  const minutes = {\n    1: \"one\",\n    2: \"two\",\n    3: \"three\",\n    4: \"four\",\n    5: \"five\",\n    6: \"six\",\n    7: \"seven\",\n    8: \"eight\",\n    9: \"nine\",\n    10: \"ten\",\n    11: \"eleven\",\n    12: \"twelve\",\n    13: \"thirteen\",\n    14: \"fourteen\",\n    15: \"quarter\",\n    16: \"sixteen\",\n    17: \"seventeen\",\n    18: \"eighteen\",\n    19: \"nineteen\",\n    20: \"twenty\",\n    21: \"twenty one\",\n    22: \"twenty two\",\n    23: \"twenty three\",\n    24: \"twenty four\",\n    25: \"twenty five\",\n    26: \"twenty six\",\n    27: \"twenty seven\",\n    28: \"twenty eight\",\n    29: \"twenty nine\",\n    30: \"half\",\n  }\n  switch(true) {\n    case (m == 0):\n      return `${minutes[h]} o' clock`\n    case (m == 1):\n      return `${minutes[m]} minute past ${minutes[h]}`\n    case (m == 15):\n      return `${minutes[m]} past ${minutes[h]}`\n    case (m > 0 && m < 30):\n      return `${minutes[m]} minutes past ${minutes[h]}`\n    case (m == 30):\n      return `${minutes[m]} past ${minutes[h]}`\n    case (m == 45):\n      return `${minutes[60 - m]} to ${minutes[h + 1]}`\n    case (m > 30):\n      return `${minutes[60 - m]} minutes to ${minutes[h + 1]}`\n    }\n}"
+            ],
+            "outputs": []
+        }
+    ]
+}
